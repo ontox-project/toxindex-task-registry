@@ -137,7 +137,9 @@ def mytask_function(user_query: str = None, file_path: str = None):
     return {"results": results}
 ```
 
-See `tasks/protopred/original_script/query_protopred_api_json.py` for a complete example.
+See these complete examples:
+- **API Integration**: [`query_protopred_api_json.py`](tasks/protopred/original_script/query_protopred_api_json.py) - Simple API query with SMILES input
+- **File Processing**: [`a01_build_events.py`](tasks/build_KE/original_script/a01_build_events.py) - PDF processing with file input
 
 ### Step 3: Convert to Celery Task (Optional, You can let admin handle this and following steps)
 

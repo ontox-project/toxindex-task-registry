@@ -1,0 +1,14 @@
+# Use shared base image directly (contains webserver, workflows, config, and all dependencies)
+FROM us-docker.pkg.dev/toxindex/toxindex-backend/base:latest
+
+# Core workflow files
+COPY build_KE/ /app/build_KE/
+USER root
+RUN pip install ./build_KE/
+
+# Switch back to app user to match base image
+USER app
+
+# Entrypoint: Celery worker for build_KE tasks only
+CMD ["python", "-m", "celery", "-A", "build_KE.celery_worker_buildke", "worker", "--loglevel=info", "-Q", "build_KE"]
+

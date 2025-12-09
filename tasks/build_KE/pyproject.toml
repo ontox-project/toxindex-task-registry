@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "build_KE"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=0.3.27",
+    "langchain-google-vertexai>=2.1.2",
+    "pydantic>=2.12.2",
+    "pandas>=2.3.2",
+    "langchain-community>=0.3.31",
+    "tqdm>=4.67.1",
+    "dotenv>=0.9.9",
+    "pypdf>=3.0.0",
+]
+
+[tool.setuptools]
+packages = ["build_KE"]

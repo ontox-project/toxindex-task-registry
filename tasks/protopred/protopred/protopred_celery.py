@@ -259,18 +259,11 @@ def protopred(self, payload):
         # --- Inputs ---
         file_ids = payload.get("file_ids", [])
         user_query = payload.get("user_query", "")
-        models = payload.get("models", None)
-        
+
         # Determine models to use
-        if models:
-            models_to_use = models
-        elif user_query:
+        if user_query:
             extracted_models = extract_models_from_query(user_query)
             models_to_use = extracted_models if extracted_models else "model_phys:water_solubility"
-            if extracted_models:
-                emit_status(task_id, f"extracted models from query: {models_to_use}")
-        else:
-            models_to_use = "model_phys:water_solubility"
         
         emit_status(task_id, f"using models: {models_to_use}")
 

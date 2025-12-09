@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: celery-worker-buildke
+  namespace: toxindex-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: celery-worker-buildke
+  template:
+    metadata:
+      labels:
+        app: celery-worker-buildke
+    spec:
+      serviceAccountName: toxindex-app-sa
+      containers:
+      - name: celery-worker-buildke
+        image: us-docker.pkg.dev/toxindex/toxindex-backend/buildke:latest
+        command: ["python", "-m", "celery", "-A", "build_KE.celery_worker_buildke", "worker", "--loglevel=info", "-Q", "build_KE"]
+        envFrom:
+        - secretRef:
+            name: backend-secrets
+        env:
+        - name: REDIS_HOST
+          valueFrom:
+            secretKeyRef:
+              name: backend-secrets
+              key: REDIS_HOST
+        - name: REDIS_PORT
+          valueFrom:
+            secretKeyRef:
+              name: backend-secrets
+              key: REDIS_PORT
+        resources:
+          requests:
+            memory: "4Gi"
+            cpu: "1000m"
+          limits:
+            memory: "8Gi"
+            cpu: "4000m"
