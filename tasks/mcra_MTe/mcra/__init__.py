@@ -1,3 +1,8 @@
 """mcra task package."""
 
-from .script import run_mcra_core, MCRACoreError, MCRACoreInvocation  # noqa: F401
+from .script import (  # noqa: F401
+    MCRACoreError,
+    MCRACoreInvocation,
+    run_mcra_cli,
+    run_mcra_core,
+)

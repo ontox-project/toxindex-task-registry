@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import os
 import shlex
+import shutil
 import subprocess
 import tempfile
 from dataclasses import dataclass
@@ -164,3 +165,50 @@ def run_mcra_core(
 def format_command(cmd: Iterable[str]) -> str:
     """Return a shell-escaped command string for logging."""
     return " ".join(shlex.quote(part) for part in cmd)
+
+
+def run_mcra_cli(
+    input_file: str,
+    config_file: str,
+    output_dir: str,
+    *,
+    mcra_bin: str = "mcra",
+    extra_args: Optional[Iterable[str]] = None,
+    timeout: Optional[int] = None,
+    print_output: bool = True,
+) -> subprocess.CompletedProcess:
+    """Run the MCRA CLI executable (not the Java JAR) and return the process result."""
+    if not shutil.which(mcra_bin):
+        raise MCRACoreError(f"MCRA executable not found: {mcra_bin}")
+
+    command = [
+        mcra_bin,
+        "--input",
+        input_file,
+        "--config",
+        config_file,
+        "--output",
+        output_dir,
+    ]
+    if extra_args:
+        command.extend(list(extra_args))
+
+    result = subprocess.run(
+        command,
+        capture_output=True,
+        text=True,
+        timeout=timeout,
+        check=False,
+    )
+
+    if print_output:
+        print("STDOUT:", result.stdout)
+        print("STDERR:", result.stderr)
+
+    if result.returncode != 0:
+        stderr = result.stderr.strip()
+        stdout = result.stdout.strip()
+        detail = stderr or stdout or f"exit code {result.returncode}"
+        raise MCRACoreError(f"MCRA CLI failed: {detail}")
+
+    return result
