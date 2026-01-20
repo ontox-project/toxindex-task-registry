@@ -12,6 +12,11 @@
 #       microsoft.netcore.app 9.0.12
 #       https://dotnet.microsoft.com/en-us/download/dotnet/9.0
 
+# 4) create RIVM login to get example data (action folder.zip)
+#       https://mcra.rivm.nl/mcra/#/
+
+
+
 import sys
 from pathlib import Path
 
