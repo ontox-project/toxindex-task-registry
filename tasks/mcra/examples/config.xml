@@ -1,0 +1,7 @@
+<MCRAConfig>
+    <AnalysisType>RiskAssessment</AnalysisType>
+    <Parameters>
+        <ConfidenceLevel>95</ConfidenceLevel>
+        <Iterations>1000</Iterations>
+    </Parameters>
+</MCRAConfig>
