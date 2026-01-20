@@ -12,10 +12,12 @@
 #       microsoft.netcore.app 9.0.12
 #       https://dotnet.microsoft.com/en-us/download/dotnet/9.0
 
-# 4) create RIVM login to get example data (action folder.zip)
+# 4) invoke on the command line for testing
+#       % dotnet ~/Downloads/MCRA.CLI/mcra.dll run -o /Users/michael/Git/ONTOX/toxindex-task-registry/tasks/mcra/examples/mcra_output /Users/michael/Git/ONTOX/toxindex-task-registry/tasks/mcra/examples/task_input/test_mcra_action_template
+
+
+# *) create RIVM login to get example data (action folder.zip)
 #       https://mcra.rivm.nl/mcra/#/
-
-
 
 import sys
 from pathlib import Path
@@ -26,9 +28,9 @@ sys.path.append(str(Path(__file__).resolve().parents[1]))
 from mcra.script import run_mcra  # noqa: E402
 
 
-mcra_dll = Path.home() / "Downloads" / "MCRA.CLI" / "mcra.dll"
+mcra_dll = Path.home() / "Downloads" / "MCLI.CLI" / "mcra.dll"
 repo_root = Path(__file__).resolve().parents[3]
-input_dir = (repo_root / "tasks/mcra/examples/task_input").resolve()
+input_dir = (repo_root / "tasks/mcra/examples/task_input/test_mcra_action_template").resolve()
 output_dir = (repo_root / "tasks/mcra/examples/mcra_output").resolve()
 
 run_mcra(

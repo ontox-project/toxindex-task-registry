@@ -1,0 +1,175 @@
+<!DOCTYPE html []>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>MCRA Report</title>
+    <link rel="stylesheet" type="text/css" href="Styles/report.css" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <header>
+        MCRA Report
+      </header>
+        <ul id="toc">
+          <li id="L-246507884">
+            <a href="Html/Modular design.html#-246507884">Modular design</a>
+          </li>
+          <li id="L-1941240018">
+            <span class="caret caret-down"></span>
+            <a href="Html/Action inputs.html#-1941240018">Action inputs</a>
+            <ul class="nested active">
+              <li id="L-557042370">
+                <a href="Html/Action inputs.html#-557042370">Data sources</a>
+              </li>
+              <li id="L650504993">
+                <a href="Html/Action inputs.html#650504993">Single value risks</a>
+              </li>
+              <li id="L-629399500">
+                <a href="Html/Action inputs.html#-629399500">Effects</a>
+              </li>
+              <li id="L619806230">
+                <a href="Html/Action inputs.html#619806230">Populations</a>
+              </li>
+              <li id="L1706590478">
+                <a href="Html/Action inputs.html#1706590478">Single value dietary exposures</a>
+              </li>
+              <li id="L20054324">
+                <a href="Html/Action inputs.html#20054324">Single value concentrations</a>
+              </li>
+              <li id="L1981417799">
+                <a href="Html/Action inputs.html#1981417799">Hazard characterisations</a>
+              </li>
+              <li id="L-42903747">
+                <a href="Html/Action inputs.html#-42903747">Single value consumptions</a>
+              </li>
+              <li id="L-1309617186">
+                <a href="Html/Action inputs.html#-1309617186">Initialisation seed</a>
+              </li>
+              <li id="L405206037">
+                <a href="Html/Action inputs.html#405206037">Uncertainty settings</a>
+              </li>
+              <li id="L-2099530816">
+                <a href="Html/Action inputs.html#-2099530816">Output settings</a>
+              </li>
+            </ul>
+          </li>
+          <li id="L847848161">
+            <span class="caret caret-down"></span>
+            <a href="Html/Sub-action results.html#847848161">Sub-action results</a>
+            <ul class="nested active">
+              <li id="L-886072887">
+                <span class="caret caret-down"></span>
+                <a href="Html/Sub-action results.html#-886072887">Populations</a>
+                <ul class="nested active">
+                  <li id="L-490014032">
+                    <a href="Html/Sub-action results.html#-490014032">Population definition</a>
+                  </li>
+                </ul>
+              </li>
+              <li id="L2124742912">
+                <span class="caret caret-down"></span>
+                <a href="Html/Sub-action results.html#2124742912">Foods</a>
+                <ul class="nested active">
+                  <li id="L-893329633">
+                    <a href="Html/Sub-action results.html#-893329633">Foods</a>
+                  </li>
+                </ul>
+              </li>
+              <li id="L1674897133">
+                <a href="Html/Sub-action results.html#1674897133">Substances</a>
+              </li>
+              <li id="L-2135278617">
+                <a href="Html/Sub-action results.html#-2135278617">Effects</a>
+              </li>
+              <li id="L-1548782864">
+                <span class="caret caret-down"></span>
+                <a href="Html/Sub-action results.html#-1548782864">Single value consumptions</a>
+                <ul class="nested active">
+                  <li id="L349553407">
+                    <a href="Html/Sub-action results.html#349553407">Single value consumptions</a>
+                  </li>
+                  <li id="L86569037">
+                    <a href="Html/Sub-action results.html#86569037">Single value consumption data</a>
+                  </li>
+                </ul>
+              </li>
+              <li id="L475538682">
+                <span class="caret caret-down"></span>
+                <a href="Html/Sub-action results.html#475538682">Hazard characterisations</a>
+                <ul class="nested active">
+                  <li id="L-1854775420">
+                    <a href="Html/Sub-action results.html#-1854775420">Hazard characterisations from data</a>
+                  </li>
+                </ul>
+              </li>
+              <li id="L-1485824793">
+                <span class="caret caret-down"></span>
+                <a href="Html/Sub-action results.html#-1485824793">Single value concentrations</a>
+                <ul class="nested active">
+                  <li id="L475469549">
+                    <a href="Html/Sub-action results.html#475469549">Single value concentrations</a>
+                  </li>
+                </ul>
+              </li>
+              <li id="L200711361">
+                <a href="Html/Sub-action results.html#200711361">Single value dietary exposures</a>
+              </li>
+            </ul>
+          </li>
+          <li id="L-1703222266">
+            <span class="caret caret-down"></span>
+            <a href="Html/Single value risks.html#-1703222266">Single value risks</a>
+            <ul class="nested active">
+              <li id="L1924520098">
+                <a href="Html/Single value risks.html#1924520098">Single value risks by source and substance</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article>
+        <p>
+          <i>Use the table of contents on the left to browse through the report.</i>
+        </p>
+      </article>
+    </main>
+    <script type="text/javascript">
+    //<![CDATA[
+    var carets = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < carets.length; i++) {
+      carets[i].addEventListener("click", function () {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("caret-down");
+      });
+      //close items, tree is open by default, in case JavaScript is disabled
+      carets[i].parentElement.querySelector(".nested").classList.toggle("active");
+      carets[i].classList.toggle("caret-down");
+    }
+    //expand current item in the tree taken from the URL hash
+    var hash = "L" + window.location.hash.substring(1);
+    var hashItem = document.getElementById(hash);
+    var selected = hashItem?.querySelector("a");
+    selected?.classList.add("selected");
+
+    while (hashItem != null && hashItem.id != "toc") {
+      hashItem = hashItem.parentElement;
+      //invoke click handler for direct '.caret' descendants
+      hashItem.querySelector(":scope > .caret")?.click();
+    }
+    //post message to parent window when this page is hosted in an iframe
+    //when a navigation item in the tree is clicked
+    var anchors = document.querySelectorAll("li > a");
+    for (i = 0; i < anchors.length; i++) {
+      anchors[i].addEventListener("click", function () {
+        selected?.classList.remove("selected");
+        selected = this;
+        selected.classList.add("selected");
+        window.parent.postMessage(this.getAttribute("href"), "*");
+      });
+    }
+    //]]></script>
+  </body>
+</html>

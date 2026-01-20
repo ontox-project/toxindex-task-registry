@@ -1,53 +1,53 @@
-<DataSourceConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<DataSourceConfiguration>
 	<DataSourceMappingRecords>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>SingleValueConsumptions</SourceTableGroup>
 			<IdRawDataSourceVersion>1</IdRawDataSourceVersion>
 			<Name>SingleValueConsumptions.xlsx</Name>
 			<RawDataSourcePath>SingleValueConsumptions.xlsx</RawDataSourcePath>
-			<Checksum>2LCi5plhH3r8jV55LxyQIklKcbzk4dWRqP0u2WSBk4M=</Checksum>
+			<Checksum>hUbnO4Qo3YZGX6OiKg5DiMwmTZ73bG7RcyvLbt0Yur0=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>Populations</SourceTableGroup>
 			<IdRawDataSourceVersion>2</IdRawDataSourceVersion>
 			<Name>Populations.xlsx</Name>
 			<RawDataSourcePath>Populations.xlsx</RawDataSourcePath>
-			<Checksum>Lr4YBk2ShSayI2CfwtV9sS6lb+rN+sDHC0GUutjp/HM=</Checksum>
+			<Checksum>ch/vi2XPET3bw3l+vK2igLIYhs94mjn194s+ICdrdwQ=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>Foods</SourceTableGroup>
 			<IdRawDataSourceVersion>3</IdRawDataSourceVersion>
 			<Name>Foods.xlsx</Name>
 			<RawDataSourcePath>Foods.xlsx</RawDataSourcePath>
-			<Checksum>cLX5W7/bBKERMxN98aKbVciYMAmXR87uL6y7LC2B170=</Checksum>
+			<Checksum>LqWHbpsR8Xwnqfte/ivBuTpIEO5ORwNI4zsOOJ1PmuE=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>Compounds</SourceTableGroup>
 			<IdRawDataSourceVersion>4</IdRawDataSourceVersion>
 			<Name>Compounds.xlsx</Name>
 			<RawDataSourcePath>Compounds.xlsx</RawDataSourcePath>
-			<Checksum>ADyqacbj423pIjaWN2t1bLcvBRapvujhoZvqdxM6r4A=</Checksum>
+			<Checksum>S+S84JpmjqBEpmwS5I27b4jaoyAs+NkduPU+yv7B32c=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>Effects</SourceTableGroup>
 			<IdRawDataSourceVersion>5</IdRawDataSourceVersion>
 			<Name>Effects.xlsx</Name>
 			<RawDataSourcePath>Effects.xlsx</RawDataSourcePath>
-			<Checksum>4JKF/c04arJPivflvb57eHFhSInfO4Pdt0eOxTukbm8=</Checksum>
+			<Checksum>qktt8K9ZFjKh87PXa/E/adhRaPZzhUs5SsSbOqRAf+k=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>HazardCharacterisations</SourceTableGroup>
 			<IdRawDataSourceVersion>6</IdRawDataSourceVersion>
 			<Name>HazardCharacterisations.xlsx</Name>
 			<RawDataSourcePath>HazardCharacterisations.xlsx</RawDataSourcePath>
-			<Checksum>XgWurfDccdKsbKxzei47EIDccQ8lSRXEYQL0ZLaKdHc=</Checksum>
+			<Checksum>pzfCFAgvjyWSP2v+w6LJ0UqtL3pHAZnk4J9NYBPhsE4=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>SingleValueConcentrations</SourceTableGroup>
 			<IdRawDataSourceVersion>7</IdRawDataSourceVersion>
 			<Name>SingleValueConcentrations.xlsx</Name>
 			<RawDataSourcePath>SingleValueConcentrations.xlsx</RawDataSourcePath>
-			<Checksum>FZJyeT/YYI4RGOSko+95aRuZQR2+NMh2YvZoS8T7/Nw=</Checksum>
+			<Checksum>F51jNubpwnD7yqphHCSnoaga0Rtclf/P5ojWIho43vE=</Checksum>
 		</DataSourceMappingRecord>
 	</DataSourceMappingRecords>
 </DataSourceConfiguration>

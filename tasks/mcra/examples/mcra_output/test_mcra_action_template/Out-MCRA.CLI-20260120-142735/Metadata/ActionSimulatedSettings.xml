@@ -1,0 +1,298 @@
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<McraVersion>
+		<Major>10</Major>
+		<Minor>2</Minor>
+		<Build>12</Build>
+		<Revision>0</Revision>
+		<Commit>4479a9fd</Commit>
+		<Tag>v10.2.12</Tag>
+	</McraVersion>
+	<Id>0</Id>
+	<Name>test_mcra_action_template</Name>
+	<DateCreated>2026-01-20T12:27:30.6662461+01:00</DateCreated>
+	<DateModified>2026-01-20T12:27:30.6662461+01:00</DateModified>
+	<ActionType>SingleValueRisks</ActionType>
+	<ScopeKeysFilters />
+	<LoopScopingTypes />
+	<ModuleConfigurations>
+		<ModuleConfiguration module="Action" compute="false">
+			<Settings>
+				<Setting id="DoUncertaintyAnalysis">false</Setting>
+				<Setting id="DoUncertaintyFactorial">false</Setting>
+				<Setting id="ExposureType">Acute</Setting>
+				<Setting id="McrCalculationRatioCutOff">1</Setting>
+				<Setting id="McrCalculationTotalExposureCutOff">0</Setting>
+				<Setting id="McrPlotMinimumPercentage">5</Setting>
+				<Setting id="McrPlotPercentiles">
+					<Value>95</Value>
+					<Value>99</Value>
+				</Setting>
+				<Setting id="McrPlotRatioCutOff">2</Setting>
+				<Setting id="OutputSections" />
+				<Setting id="OutputSectionSelectionMethod">OptIn</Setting>
+				<Setting id="RandomSeed">123456</Setting>
+				<Setting id="SelectedPercentiles">
+					<Value>50</Value>
+					<Value>90</Value>
+					<Value>95</Value>
+					<Value>99</Value>
+					<Value>99.9</Value>
+					<Value>99.99</Value>
+				</Setting>
+				<Setting id="SelectedTier">Custom</Setting>
+				<Setting id="SkipPrivacySensitiveOutputs">false</Setting>
+				<Setting id="UncertaintyAnalysisCycles">0</Setting>
+				<Setting id="UncertaintyIterationsPerResampledSet">10000</Setting>
+				<Setting id="UncertaintyLowerBound">2.5</Setting>
+				<Setting id="UncertaintyUpperBound">97.5</Setting>
+				<Setting id="VariabilityDrilldownPercentage">97.5</Setting>
+				<Setting id="VariabilityLowerPercentage">25</Setting>
+				<Setting id="VariabilityUpperPercentage">75</Setting>
+				<Setting id="VariabilityUpperTailPercentage">97.5</Setting>
+			</Settings>
+		</ModuleConfiguration>
+		<ModuleConfiguration module="ActiveSubstances" compute="true">
+			<Settings>
+				<Setting id="AssessmentGroupMembershipCalculationMethod">CrispMax</Setting>
+				<Setting id="CombinationMethodMembershipInfoAndPodPresence">Intersection</Setting>
+				<Setting id="ExcludeSelectedSubstances" />
+				<Setting id="FilterByAvailableHazardCharacterisation">false</Setting>
+				<Setting id="FilterByAvailableHazardDose">false</Setting>
+				<Setting id="FilterByCertainAssessmentGroupMembership">false</Setting>
+				<Setting id="IncludeSubstancesWithUnknowMemberships">false</Setting>
+				<Setting id="PriorMembershipProbability">0.5</Setting>
+				<Setting id="ResampleAssessmentGroupMemberships">false</Setting>
+				<Setting id="UseMolecularDockingModels">false</Setting>
+				<Setting id="UseProbabilisticMemberships">false</Setting>
+				<Setting id="UseQsarModels">false</Setting>
+			</Settings>
+		</ModuleConfiguration>
+		<ModuleConfiguration module="ConcentrationModels" compute="false">
+			<Settings>
+				<Setting id="ConcentrationModelTypesFoodSubstance" />
+				<Setting id="CorrelateImputedValueWithSamplePotency">false</Setting>
+				<Setting id="DefaultConcentrationModel">Empirical</Setting>
+				<Setting id="FractionOfLor">0.5</Setting>
+				<Setting id="FractionOfMrl">1</Setting>
+				<Setting id="ImputeMissingValues">false</Setting>
+				<Setting id="IsFallbackMrl">false</Setting>
+				<Setting id="IsParametric">false</Setting>
+				<Setting id="IsSampleBased">false</Setting>
+				<Setting id="NonDetectsHandlingMethod">ReplaceByZero</Setting>
+				<Setting id="RestrictLorImputationToAuthorisedUses">false</Setting>
+				<Setting id="UseAgriculturalUseTable">false</Setting>
+			</Settings>
+		</ModuleConfiguration>
+		<ModuleConfiguration module="DietaryExposures" compute="false">
+			<Settings>
+				<Setting id="AmountModelCovariateModelType">Constant</Setting>
+				<Setting id="AmountModelFunctionType">Polynomial</Setting>
+				<Setting id="AmountModelMaxDegreesOfFreedom">4</Setting>
+				<Setting id="AmountModelMinDegreesOfFreedom">0</Setting>
+				<Setting id="AmountModelTestingLevel">0.05</Setting>
+				<Setting id="AmountModelTestingMethod">Backward</Setting>
+				<Setting id="AmountModelTransformType">Logarithmic</Setting>
+				<Setting id="AmountModelVarianceRatio">1</Setting>
+				<Setting id="DietaryExposuresDetailsLevel">Full</Setting>
+				<Setting id="DietPopulationAlignmentMethod">MatchRandom</Setting>
+				<Setting id="ExposureLevels">
+					<Value>1</Value>
+					<Value>10</Value>
+					<Value>50</Value>
+					<Value>100</Value>
+					<Value>200</Value>
+					<Value>500</Value>
+				</Setting>
+				<Setting id="ExposureMethod">Automatic</Setting>
+				<Setting id="FrequencyModelCovariateModelType">Constant</Setting>
+				<Setting id="FrequencyModelDispersion">0.0001</Setting>
+				<Setting id="FrequencyModelFunctionType">Polynomial</Setting>
+				<Setting id="FrequencyModelMaxDegreesOfFreedom">4</Setting>
+				<Setting id="FrequencyModelMinDegreesOfFreedom">0</Setting>
+				<Setting id="FrequencyModelTestingLevel">0.05</Setting>
+				<Setting id="FrequencyModelTestingMethod">Backward</Setting>
+				<Setting id="ImputeExposureDistributions">false</Setting>
+				<Setting id="IntakeCovariateModelling">false</Setting>
+				<Setting id="IntakeExtraPredictionLevels" />
+				<Setting id="IntakeFirstModelThenAdd">false</Setting>
+				<Setting id="IntakeModelPredictionIntervals">20</Setting>
+				<Setting id="IntakeModelsPerCategory" />
+				<Setting id="IntakeModelType">OIM</Setting>
+				<Setting id="IsDetailedOutput">false</Setting>
+				<Setting id="IsPerPerson">false</Setting>
+				<Setting id="IsSingleSamplePerDay">false</Setting>
+				<Setting id="IsSurveySampling">false</Setting>
+				<Setting id="IsufModelGridPrecision">20</Setting>
+				<Setting id="IsufModelNumberOfIterations">5</Setting>
+				<Setting id="IsufModelSplineFit">false</Setting>
+				<Setting id="MaximiseCoOccurrenceHighResidues">false</Setting>
+				<Setting id="McrAnalysis">false</Setting>
+				<Setting id="McrExposureApproachType">RiskBased</Setting>
+				<Setting id="NumberOfMonteCarloIterations">100000</Setting>
+				<Setting id="ReductionToLimitScenario">false</Setting>
+				<Setting id="ResampleImputationExposureDistributions">false</Setting>
+				<Setting id="ScenarioAnalysisFoods" />
+				<Setting id="UseOccurrencePatternsForResidueGeneration">false</Setting>
+				<Setting id="UseUnitVariability">false</Setting>
+				<Setting id="VariabilityDiagnosticsAnalysis">false</Setting>
+			</Settings>
+		</ModuleConfiguration>
+		<ModuleConfiguration module="FoodConversions" compute="false">
+			<Settings>
+				<Setting id="SubstanceIndependent">true</Setting>
+				<Setting id="TotalDietStudy">false</Setting>
+				<Setting id="UseComposition">true</Setting>
+				<Setting id="UseDefaultProcessingFactor">true</Setting>
+				<Setting id="UseMarketShares">false</Setting>
+				<Setting id="UseProcessing">false</Setting>
+				<Setting id="UseReadAcrossFoodTranslations">false</Setting>
+				<Setting id="UseSubTypes">false</Setting>
+				<Setting id="UseSuperTypes">false</Setting>
+			</Settings>
+		</ModuleConfiguration>
+		<ModuleConfiguration module="HazardCharacterisations" compute="false">
+			<Settings>
+				<Setting id="AdditionalAssessmentFactor">100</Setting>
+				<Setting id="ApplyKineticConversions">false</Setting>
+				<Setting id="ExposureRoutes" />
+				<Setting id="HazardCharacterisationsConvertToSingleTargetMatrix">false</Setting>
+				<Setting id="HazardDoseImputationMethod">MunroP5</Setting>
+				<Setting id="HCSubgroupDependent">true</Setting>
+				<Setting id="ImputeMissingHazardDoses">false</Setting>
+				<Setting id="InternalModelType">ConversionFactorModel</Setting>
+				<Setting id="PointOfDeparture">FromReference</Setting>
+				<Setting id="RestrictToCriticalEffect">false</Setting>
+				<Setting id="TargetDoseLevelType">External</Setting>
+				<Setting id="TargetDosesCalculationMethod">InVivoPods</Setting>
+				<Setting id="TargetDoseSelectionMethod">MostToxic</Setting>
+				<Setting id="TargetMatrix">Undefined</Setting>
+				<Setting id="UseAdditionalAssessmentFactor">false</Setting>
+				<Setting id="UseBMDL">false</Setting>
+				<Setting id="UseIntraSpeciesConversionFactors">false</Setting>
+			</Settings>
+		</ModuleConfiguration>
+		<ModuleConfiguration module="HumanMonitoringAnalysis" compute="false">
+			<Settings>
+				<Setting id="ApplyExposureBiomarkerConversions">false</Setting>
+				<Setting id="ApplyKineticConversions">false</Setting>
+				<Setting id="HbmConvertToSingleTargetMatrix">false</Setting>
+				<Setting id="HbmFractionOfLor">1</Setting>
+				<Setting id="HbmKineticConversionMethod">ConversionFactorModel</Setting>
+				<Setting id="HbmNonDetectsHandlingMethod">ReplaceByZero</Setting>
+				<Setting id="McrAnalysis">false</Setting>
+				<Setting id="McrExposureApproachType">RiskBased</Setting>
+				<Setting id="MissingValueCutOff">50</Setting>
+				<Setting id="MissingValueImputationMethod">SetZero</Setting>
+				<Setting id="NonDetectImputationMethod">ReplaceByLimit</Setting>
+				<Setting id="SpecificGravityConversionFactor">1.48</Setting>
+				<Setting id="StandardiseBlood">false</Setting>
+				<Setting id="StandardiseBloodExcludedSubstancesSubset" />
+				<Setting id="StandardiseBloodExcludeSubstances">false</Setting>
+				<Setting id="StandardiseBloodMethod">GravimetricAnalysis</Setting>
+				<Setting id="StandardiseUrine">false</Setting>
+				<Setting id="StandardiseUrineExcludedSubstancesSubset" />
+				<Setting id="StandardiseUrineExcludeSubstances">false</Setting>
+				<Setting id="StandardiseUrineMethod">SpecificGravity</Setting>
+				<Setting id="StoreIndividualDayIntakes">false</Setting>
+				<Setting id="TargetMatrix">Undefined</Setting>
+			</Settings>
+		</ModuleConfiguration>
+		<ModuleConfiguration module="OccurrenceFrequencies" compute="true">
+			<Settings />
+		</ModuleConfiguration>
+		<ModuleConfiguration module="OccurrencePatterns" compute="true">
+			<Settings>
+				<Setting id="RecomputeOccurrencePatterns">false</Setting>
+				<Setting id="RestrictOccurencePatternScalingToAuthorisedUses">false</Setting>
+				<Setting id="ScaleUpOccurencePatterns">false</Setting>
+				<Setting id="SetMissingAgriculturalUseAsUnauthorized">false</Setting>
+				<Setting id="UseAgriculturalUsePercentage">false</Setting>
+			</Settings>
+		</ModuleConfiguration>
+		<ModuleConfiguration module="Populations" compute="true">
+			<Settings>
+				<Setting id="IndividualDaySubsetDefinition" />
+				<Setting id="IndividualsSubsetDefinitions" />
+				<Setting id="NominalPopulationBodyWeight">70</Setting>
+				<Setting id="PopulationSubsetSelection">false</Setting>
+				<Setting id="ResamplePopulationSizes">false</Setting>
+			</Settings>
+		</ModuleConfiguration>
+		<ModuleConfiguration module="Substances" compute="false">
+			<Settings>
+				<Setting id="CodeReferenceSubstance" />
+				<Setting id="Cumulative">false</Setting>
+				<Setting id="MultipleSubstances">false</Setting>
+			</Settings>
+		</ModuleConfiguration>
+		<ModuleConfiguration module="TargetExposures" compute="false">
+			<Settings>
+				<Setting id="AirAgeAlignment">false</Setting>
+				<Setting id="AirAgeAlignmentMethod">FitClosest</Setting>
+				<Setting id="AirAgeBins">
+					<Value>25</Value>
+					<Value>50</Value>
+					<Value>75</Value>
+					<Value>100</Value>
+				</Setting>
+				<Setting id="AirPopulationAlignmentMethod">MatchRandom</Setting>
+				<Setting id="AirSexAlignment">false</Setting>
+				<Setting id="AllowUseSurrogateMatrix">false</Setting>
+				<Setting id="CodeCompartment" />
+				<Setting id="ConsumerProductAgeAlignment">false</Setting>
+				<Setting id="ConsumerProductAgeAlignmentMethod">FitClosest</Setting>
+				<Setting id="ConsumerProductAgeBins">
+					<Value>25</Value>
+					<Value>50</Value>
+					<Value>75</Value>
+					<Value>100</Value>
+				</Setting>
+				<Setting id="ConsumerProductPopulationAlignmentMethod">MatchRandom</Setting>
+				<Setting id="ConsumerProductSexAlignment">false</Setting>
+				<Setting id="DietAgeAlignment">false</Setting>
+				<Setting id="DietAgeAlignmentMethod">FitClosest</Setting>
+				<Setting id="DietAgeBins">
+					<Value>25</Value>
+					<Value>50</Value>
+					<Value>75</Value>
+					<Value>100</Value>
+				</Setting>
+				<Setting id="DietPopulationAlignmentMethod">MatchRandom</Setting>
+				<Setting id="DietSexAlignment">false</Setting>
+				<Setting id="DustAgeAlignment">false</Setting>
+				<Setting id="DustAgeAlignmentMethod">FitClosest</Setting>
+				<Setting id="DustAgeBins">
+					<Value>25</Value>
+					<Value>50</Value>
+					<Value>75</Value>
+					<Value>100</Value>
+				</Setting>
+				<Setting id="DustPopulationAlignmentMethod">MatchRandom</Setting>
+				<Setting id="DustSexAlignment">false</Setting>
+				<Setting id="ExposureSources" />
+				<Setting id="IndividualReferenceSet">Diet</Setting>
+				<Setting id="InternalModelType">ConversionFactorModel</Setting>
+				<Setting id="McrAnalysis">false</Setting>
+				<Setting id="McrExposureApproachType">RiskBased</Setting>
+				<Setting id="NonDietaryAgeAlignment">false</Setting>
+				<Setting id="NonDietaryPopulationAlignmentMethod">MatchRandom</Setting>
+				<Setting id="NonDietarySexAlignment">false</Setting>
+				<Setting id="SelectedExpressionType">None</Setting>
+				<Setting id="SoilAgeAlignment">false</Setting>
+				<Setting id="SoilAgeAlignmentMethod">FitClosest</Setting>
+				<Setting id="SoilAgeBins">
+					<Value>25</Value>
+					<Value>50</Value>
+					<Value>75</Value>
+					<Value>100</Value>
+				</Setting>
+				<Setting id="SoilPopulationAlignmentMethod">MatchRandom</Setting>
+				<Setting id="SoilSexAlignment">false</Setting>
+				<Setting id="StandardisedBlood">false</Setting>
+				<Setting id="StandardisedNormalisedUrine">false</Setting>
+				<Setting id="StoreIndividualDayIntakes">false</Setting>
+				<Setting id="SurrogateBiologicalMatrix">WholeBody</Setting>
+			</Settings>
+		</ModuleConfiguration>
+	</ModuleConfigurations>
+</Project>
