@@ -12,9 +12,16 @@
 #       microsoft.netcore.app 9.0.12
 #       https://dotnet.microsoft.com/en-us/download/dotnet/9.0
 
-# 4) invoke on the command line for testing
-#       % dotnet ~/Downloads/MCRA.CLI/mcra.dll run -o /Users/michael/Git/ONTOX/toxindex-task-registry/tasks/mcra/examples/mcra_output /Users/michael/Git/ONTOX/toxindex-task-registry/tasks/mcra/examples/task_input/test_mcra_action_template
+# 4) Make action template on windows machine
+#       Download MCRA.CLI.10.2.12.zip file on windows machine and locate in Downloads
+#       In Downloads folder unzip
+#       cd on the terminal to Downloads/MCRA.CLI.10.2.12/MCRA.CLI 
+#       find mcra.exe there and run command
+#       >mcra.exe create test_mcra_action_template -a SingleValueRisk
+#       a new empty template folder with the name specified above is created in the MCRA.CLI folder
 
+# 5) invoke on the command line for testing
+#       % dotnet ~/Downloads/MCRA.CLI/mcra.dll run -o /Users/michael/Git/ONTOX/toxindex-task-registry/tasks/mcra/examples/mcra_output /Users/michael/Git/ONTOX/toxindex-task-registry/tasks/mcra/examples/task_input/test_mcra_action_template
 
 # *) create RIVM login to get example data (action folder.zip)
 #       https://mcra.rivm.nl/mcra/#/
