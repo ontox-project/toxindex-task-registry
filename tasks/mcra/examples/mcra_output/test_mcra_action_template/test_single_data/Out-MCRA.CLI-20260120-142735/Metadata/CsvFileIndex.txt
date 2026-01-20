@@ -1,0 +1,6 @@
+ActiveSubstanceSingleValueConcentrationsTable.csv	Sub-action results | Single value concentrations | Single value concentrations
+EffectsTable.csv	Sub-action results | Effects
+FoodsTable.csv	Sub-action results | Foods | Foods
+SingleValueConsumptionsDataTable.csv	Sub-action results | Single value consumptions | Single value consumption data
+SingleValueConsumptionsTable.csv	Sub-action results | Single value consumptions | Single value consumptions
+SubstancesTable.csv	Sub-action results | Substances

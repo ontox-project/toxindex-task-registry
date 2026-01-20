@@ -5,49 +5,49 @@
 			<IdRawDataSourceVersion>1</IdRawDataSourceVersion>
 			<Name>SingleValueConsumptions.xlsx</Name>
 			<RawDataSourcePath>SingleValueConsumptions.xlsx</RawDataSourcePath>
-			<Checksum>hUbnO4Qo3YZGX6OiKg5DiMwmTZ73bG7RcyvLbt0Yur0=</Checksum>
+			<Checksum>H9Vh7L6m8b0wABiYGzExpbKowiPg2XcqtsSq4zxdstw=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>Populations</SourceTableGroup>
 			<IdRawDataSourceVersion>2</IdRawDataSourceVersion>
 			<Name>Populations.xlsx</Name>
 			<RawDataSourcePath>Populations.xlsx</RawDataSourcePath>
-			<Checksum>ch/vi2XPET3bw3l+vK2igLIYhs94mjn194s+ICdrdwQ=</Checksum>
+			<Checksum>OSenmjKGdt3unOKRjvuayHXFo5udvj5b2EC44GZshBQ=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>Foods</SourceTableGroup>
 			<IdRawDataSourceVersion>3</IdRawDataSourceVersion>
 			<Name>Foods.xlsx</Name>
 			<RawDataSourcePath>Foods.xlsx</RawDataSourcePath>
-			<Checksum>LqWHbpsR8Xwnqfte/ivBuTpIEO5ORwNI4zsOOJ1PmuE=</Checksum>
+			<Checksum>M/3MID7rvFQUlKVc+ljun2DElECH/LrwFXbEe2F7xyw=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>Compounds</SourceTableGroup>
 			<IdRawDataSourceVersion>4</IdRawDataSourceVersion>
 			<Name>Compounds.xlsx</Name>
 			<RawDataSourcePath>Compounds.xlsx</RawDataSourcePath>
-			<Checksum>S+S84JpmjqBEpmwS5I27b4jaoyAs+NkduPU+yv7B32c=</Checksum>
+			<Checksum>9DPqCK+stqql6pkD3HvQszmc8UXEziAcfzD8QjBfxhY=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>Effects</SourceTableGroup>
 			<IdRawDataSourceVersion>5</IdRawDataSourceVersion>
 			<Name>Effects.xlsx</Name>
 			<RawDataSourcePath>Effects.xlsx</RawDataSourcePath>
-			<Checksum>qktt8K9ZFjKh87PXa/E/adhRaPZzhUs5SsSbOqRAf+k=</Checksum>
+			<Checksum>VYJs7r6JxvduKxz3IcZpNYFQjFmtUKeaBS442KcPmB4=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>HazardCharacterisations</SourceTableGroup>
 			<IdRawDataSourceVersion>6</IdRawDataSourceVersion>
 			<Name>HazardCharacterisations.xlsx</Name>
 			<RawDataSourcePath>HazardCharacterisations.xlsx</RawDataSourcePath>
-			<Checksum>pzfCFAgvjyWSP2v+w6LJ0UqtL3pHAZnk4J9NYBPhsE4=</Checksum>
+			<Checksum>7PQMwvi4DWSoEcx63hNjcLN4Vfxzz7Oa3TJQzZ83idk=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>SingleValueConcentrations</SourceTableGroup>
 			<IdRawDataSourceVersion>7</IdRawDataSourceVersion>
 			<Name>SingleValueConcentrations.xlsx</Name>
 			<RawDataSourcePath>SingleValueConcentrations.xlsx</RawDataSourcePath>
-			<Checksum>F51jNubpwnD7yqphHCSnoaga0Rtclf/P5ojWIho43vE=</Checksum>
+			<Checksum>xuneIgMsN2aG8Src8h71SQcE7W9wccdU8otxWIoyT9U=</Checksum>
 		</DataSourceMappingRecord>
 	</DataSourceMappingRecords>
 </DataSourceConfiguration>
