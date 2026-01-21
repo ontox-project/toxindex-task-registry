@@ -1,6 +1,6 @@
 <DataSourceConfiguration>
 	<DataSourceMappingRecords>
-		<DataSourceMappingRecord><SourceTableGroup>SingleValueConsumptions</SourceTableGroup><IdRawDataSourceVersion>1</IdRawDataSourceVersion><Name>SingleValueConsumptions.xlsx</Name><RawDataSourcePath>SingleValueConsumptions.xlsx</RawDataSourcePath><Checksum>mPV67reM7aPlb/7goRyec+rAJabD1UhIG5iIkiWqkQQ=</Checksum></DataSourceMappingRecord><DataSourceMappingRecord>
+		<DataSourceMappingRecord><SourceTableGroup>SingleValueConsumptions</SourceTableGroup><IdRawDataSourceVersion>1</IdRawDataSourceVersion><Name>SingleValueConsumptions.xlsx</Name><RawDataSourcePath>SingleValueConsumptions.xlsx</RawDataSourcePath><Checksum>Kl8c7YMZsC2+9cL+CtqzzZ+H5dfeECD+5upobCg4Tqg=</Checksum></DataSourceMappingRecord><DataSourceMappingRecord>
 			<SourceTableGroup>Populations</SourceTableGroup>
 			<IdRawDataSourceVersion>2</IdRawDataSourceVersion>
 			<Name>Populations.xlsx</Name>
@@ -33,7 +33,7 @@
 			<IdRawDataSourceVersion>6</IdRawDataSourceVersion>
 			<Name>HazardCharacterisations.xlsx</Name>
 			<RawDataSourcePath>HazardCharacterisations.xlsx</RawDataSourcePath>
-			<Checksum>F6zqL/k3EU7ynDAuRdWjbFMXKNZTZXMnWC4bfI6TWFU=</Checksum>
+			<Checksum>bMF+zNVo+KdrZNSiatTNREjrLnHYmADGMblWvbUUuHM=</Checksum>
 		</DataSourceMappingRecord>
 		<DataSourceMappingRecord>
 			<SourceTableGroup>SingleValueConcentrations</SourceTableGroup>
