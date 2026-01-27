@@ -1,0 +1,21 @@
+﻿"Food name","Food code","Mean consumption (g/day)","Body weight (kg)"
+"Apples","F01",112,70
+"Pears","F02",70,70
+"Strawberries","F03",21,70
+"Grapes","F04",56,70
+"Tomatoes","F05",98,70
+"Lettuce","F06",28,70
+"Spinach","F07",21,70
+"Potatoes","F08",154,70
+"Wheat bread","F09",175,70
+"Rice","F10",126,70
+"Oats","F11",42,70
+"Milk","F12",210,70
+"Yogurt","F13",84,70
+"Chicken","F14",105,70
+"Pork","F15",91,70
+"Salmon","F16",28,70
+"Eggs","F17",35,70
+"Olive oil","F18",14,70
+"Oranges","F19",84,70
+"Carrots","F20",63,70

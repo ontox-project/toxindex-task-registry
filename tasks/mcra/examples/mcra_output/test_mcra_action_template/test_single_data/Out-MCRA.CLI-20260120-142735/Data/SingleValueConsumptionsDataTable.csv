@@ -1,0 +1,3 @@
+﻿"Population name","Food name","Food code","Consumption type","Consumption amount","Consumption unit","Reference"
+"POP1","Apples","F1","Mean consumption",0.2,g/kg bw/day,"Test"
+"POP1","Bread","F2","Mean consumption",0.15,g/kg bw/day,"Test"

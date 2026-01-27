@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>MCRA Report</title>
+  <link rel='stylesheet' type='text/css' href='../Styles/report.css' />
+</head>
+<body>
+  <main>
+    <nav>
+      <header>
+        MCRA Report
+      </header>
+      <ul id='toc'><li id='L-160338763'><a href='Modular design.html#-160338763'>Modular design</a>
+</li>
+<li id='L-71613830'><span class='caret caret-down'></span><a href='Action inputs.html#-71613830'>Action inputs</a>
+<ul class='nested active'>
+<li id='L-1410081056'><a href='Action inputs.html#-1410081056'>Data sources</a>
+</li>
+<li id='L829237710'><a href='Action inputs.html#829237710'>Single value risks</a>
+</li>
+<li id='L-2046957048'><a href='Action inputs.html#-2046957048'>Effects</a>
+</li>
+<li id='L856104906'><a href='Action inputs.html#856104906'>Populations</a>
+</li>
+<li id='L-2015279696'><a href='Action inputs.html#-2015279696'>Single value dietary exposures</a>
+</li>
+<li id='L-696147667'><a href='Action inputs.html#-696147667'>Single value concentrations</a>
+</li>
+<li id='L576855530'><a href='Action inputs.html#576855530'>Hazard characterisations</a>
+</li>
+<li id='L-2031155634'><a href='Action inputs.html#-2031155634'>Single value consumptions</a>
+</li>
+<li id='L1674327884'><a href='Action inputs.html#1674327884'>Initialisation seed</a>
+</li>
+<li id='L1035365276'><a href='Action inputs.html#1035365276'>Uncertainty settings</a>
+</li>
+<li id='L442129963'><a href='Action inputs.html#442129963'>Output settings</a>
+</li>
+</ul>
+</li>
+<li id='L-524936301'><span class='caret caret-down'></span><a href='Sub-action results.html#-524936301'>Sub-action results</a>
+<ul class='nested active'>
+<li id='L402782435'><span class='caret caret-down'></span><a href='Sub-action results.html#402782435'>Populations</a>
+<ul class='nested active'>
+<li id='L-1292825684'><a href='Sub-action results.html#-1292825684'>Population definition</a>
+</li>
+</ul>
+</li>
+<li id='L-1412944262'><span class='caret caret-down'></span><a href='Sub-action results.html#-1412944262'>Foods</a>
+<ul class='nested active'>
+<li id='L1994015073'><a href='Sub-action results.html#1994015073'>Foods</a>
+</li>
+</ul>
+</li>
+<li id='L1595857698'><a href='Sub-action results.html#1595857698'>Substances</a>
+</li>
+<li id='L1794687777'><a href='Sub-action results.html#1794687777'>Effects</a>
+</li>
+<li id='L1810489191'><span class='caret caret-down'></span><a href='Sub-action results.html#1810489191'>Single value consumptions</a>
+<ul class='nested active'>
+<li id='L-149052613'><a href='Sub-action results.html#-149052613'>Single value consumptions</a>
+</li>
+<li id='L69527570'><a href='Sub-action results.html#69527570'>Single value consumption data</a>
+</li>
+</ul>
+</li>
+<li id='L123533059'><span class='caret caret-down'></span><a href='Sub-action results.html#123533059'>Hazard characterisations</a>
+<ul class='nested active'>
+<li id='L206019200'><a href='Sub-action results.html#206019200'>Hazard characterisations from data</a>
+</li>
+</ul>
+</li>
+<li id='L-1149470138'><span class='caret caret-down'></span><a href='Sub-action results.html#-1149470138'>Single value concentrations</a>
+<ul class='nested active'>
+<li id='L-1774003975'><a href='Sub-action results.html#-1774003975'>Single value concentrations</a>
+</li>
+</ul>
+</li>
+<li id='L1826365129'><a href='Sub-action results.html#1826365129'>Single value dietary exposures</a>
+</li>
+</ul>
+</li>
+<li id='L900851559'><span class='caret caret-down'></span><a href='Single value risks.html#900851559'>Single value risks</a>
+<ul class='nested active'>
+<li id='L194847655'><a href='Single value risks.html#194847655'>Single value risks by source and substance</a>
+</li>
+</ul>
+</li>
+</ul>
+
+    </nav>
+    <article>
+      <div class="section" data-section-id="3b1192a0-2825-4653-b894-ce027ff3310b">
+  <h1 class="sectionHeader" id="900851559">Single value risks</h1>
+  <div class="section" data-section-id="39f4209d-f287-49d7-aeef-692a30a689dc">
+    <h2 class="sectionHeader" id="194847655">Single value risks by source and substance</h2>
+    <div class="section" data-section-id="39f4209d-f287-49d7-aeef-692a30a689dc">
+      <p class="description">Total 0 risk estimates for exposure of 0 substances from 0 sources of exposure. The risk estimates are obtained by combining the exposure estimates with the hazard characterisation values.</p>
+    </div>
+  </div>
+</div>
+    </article>
+  </main>
+  <script type="text/javascript">
+    //<![CDATA[
+    var carets = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < carets.length; i++) {
+      carets[i].addEventListener("click", function () {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("caret-down");
+      });
+      //close items, tree is open by default, in case JavaScript is disabled
+      carets[i].parentElement.querySelector(".nested").classList.toggle("active");
+      carets[i].classList.toggle("caret-down");
+    }
+    //expand current item in the tree taken from the URL hash
+    var hash = "L" + window.location.hash.substring(1);
+    var hashItem = document.getElementById(hash);
+    var selected = hashItem?.querySelector("a");
+    selected?.classList.add("selected");
+
+    while (hashItem != null && hashItem.id != "toc") {
+      hashItem = hashItem.parentElement;
+      //invoke click handler for direct '.caret' descendants
+      hashItem.querySelector(":scope > .caret")?.click();
+    }
+    //post message to parent window when this page is hosted in an iframe
+    //when a navigation item in the tree is clicked
+    var anchors = document.querySelectorAll("li > a");
+    for (i = 0; i < anchors.length; i++) {
+      anchors[i].addEventListener("click", function () {
+        selected?.classList.remove("selected");
+        selected = this;
+        selected.classList.add("selected");
+        window.parent.postMessage(this.getAttribute("href"), "*");
+      });
+    }
+    //]]>
+  </script>
+</body>
+</html>

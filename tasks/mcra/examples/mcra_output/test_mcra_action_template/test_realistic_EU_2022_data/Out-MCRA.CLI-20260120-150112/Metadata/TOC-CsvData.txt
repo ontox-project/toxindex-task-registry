@@ -1,0 +1,7 @@
+Title,TitlePath,SectionLabel,SectionId
+"EffectsTable","Sub-action results | Effects","","4103e735-8ea4-4b55-9c90-9d7f55a1f8df"
+"FoodsTable","Sub-action results | Foods | Foods","","ccd60ccb-e605-4701-8cd4-0bead97f0083"
+"ActiveSubstanceSingleValueConcentrationsTable","Sub-action results | Single value concentrations | Single value concentrations","","c0a591ed-ada2-40da-bc89-e493ddd06221"
+"SingleValueConsumptionsDataTable","Sub-action results | Single value consumptions | Single value consumption data","","7f4defa1-9526-4a1d-8068-3b009a6c7d93"
+"SingleValueConsumptionsTable","Sub-action results | Single value consumptions | Single value consumptions","","9c3c0072-6070-47a8-b0f1-64bb7a9a7bd5"
+"SubstancesTable","Sub-action results | Substances","","55e89049-fd15-4bed-a2b9-025ae64458ce"
