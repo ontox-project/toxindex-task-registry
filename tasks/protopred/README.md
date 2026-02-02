@@ -45,19 +45,17 @@ All usable code is in `protopred/core.py`: the items below outline the direct AP
     Validates SMILES column/field before POST; sends via multipart upload.
 
 
-- Model catalog & parameter sync to API format  
-    - Catalog: `MODEL_CATALOG` maps every module/property/model; `list_models(module=None)` exposes it.  
-    - parameter sync: flexible names (`logp`, `water`, `model_phys:water_solubility`, etc.) are normalized to canonical `model_<prop>:<name>` (deduped, order-preserved).
-
+- Model catalog & parameter sync to API format
+  - `list_models(module=None)` — returns `MODEL_CATALOG` (all modules by default, or filter by module).
+  - Model normalization — flexible names (`logp`, `water`, `model_phys:water_solubility`, etc.) are resolved to canonical `model_<prop>:<name>` and deduped in order before requests.
 
 - MCP surface - agent-facing wrappers
-  - `mcp_list_models(module=None)` — discovery helper; returns `MODEL_CATALOG` (optionally filtered).  
-  - `mcp_predict(smiles=None, batch=None, file_path=None, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — agent entrypoint. Provide exactly one of `smiles`, `batch` (dict), or `file_path`; dispatches to the matching predict_* helper with the same parameters as above.
+  - `mcp_list_models(module=None)` — discovery helper; same output as `list_models`, optional module filter.
+  - `mcp_predict(smiles=None, batch=None, file_path=None, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — agent entrypoint. Provide exactly one of `smiles`, `batch` (dict), or `file_path`; internally dispatches to the matching predict_* helper.
 
-
-- Defaults & creds  
-  - `DEFAULT_MODULE="ProtoPHYSCHEM"`, `DEFAULT_MODELS_LIST="model_phys:water_solubility"`, `DEFAULT_BASE_URL="https://protopred.protoqsar.com/API/v2/"`.  
-  - Credentials pulled from env (`PROTOPRED_ACCOUNT_TOKEN`, `PROTOPRED_ACCOUNT_SECRET_KEY`, `PROTOPRED_ACCOUNT_USER`) with API-PDF demo fallbacks.
+- Defaults & creds
+  - Constants: `DEFAULT_MODULE="ProtoPHYSCHEM"`, `DEFAULT_MODELS_LIST="model_phys:water_solubility"`, `DEFAULT_BASE_URL="https://protopred.protoqsar.com/API/v2/"`.
+  - Credentials: read from env vars `PROTOPRED_ACCOUNT_TOKEN`, `PROTOPRED_ACCOUNT_SECRET_KEY`, `PROTOPRED_ACCOUNT_USER` (fallback to demo creds from the API PDF).
 
 ### MCP wrapper for ToxIndex agents
 
