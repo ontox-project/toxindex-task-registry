@@ -14,7 +14,15 @@ protopred/
 All usable code is in `protopred/core.py`:
 
 - API callers  
-  - `predict_smiles(smiles, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON"|"XLSX")` — single SMILES string. Use `output_type="JSON"` for dict output; `output_type="XLSX"` returns Excel bytes (or writes to `output_path` if provided). * indicates arguments are called by label and are not positional
+  - `predict_smiles(smiles, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON"|"XLSX", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — parameters in order:
+    1) `smiles` (required str) — the SMILES to score.  
+    2) `module` (keyword-only; default `ProtoPHYSCHEM`).  
+    3) `models_list` (keyword-only; default `model_phys:water_solubility`, aliases allowed).  
+    4) `output_type` (keyword-only; `"JSON"` or `"XLSX"`).  
+    5) `output_path` (optional path; if set with XLSX, bytes are written to disk).  
+    6) `base_url` (keyword-only; default API endpoint).  
+    7) `timeout` (keyword-only seconds).  
+    The `*` simply enforces that params 2–7 are passed by name for clarity.
    
   - `predict_batch_dict(molecules_dict, *, module, models_list, output_type)` — embedded JSON batch: `{"ID": {"SMILES": "...", ...}, ...}`.  
   - `predict_file(file_path, *, module, models_list, output_type)` — upload `.xlsx` or `.json`; enforces SMILES column/field before POST.
