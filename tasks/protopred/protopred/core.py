@@ -121,7 +121,8 @@ def _credentials() -> Dict[str, str]:
 def _normalize_models(models: Union[str, Iterable[str]]) -> str:
     """Return the comma-separated models_list string accepted by the API."""
     if isinstance(models, str):
-        models_iter: Iterable[str] = [models]
+        # Allow comma-separated string or single token
+        models_iter: Iterable[str] = [m for m in models.split(",") if m is not None]
     else:
         models_iter = models
 
@@ -315,6 +316,93 @@ def _validate_input_file(path: Path) -> None:
 
 
 # --------------------------------------------------------------------------- #
+# CLI entrypoint
+# --------------------------------------------------------------------------- #
+def _cli():  # pragma: no cover
+    import argparse
+
+    parser = argparse.ArgumentParser(description="ProtoPRED API client (standalone).")
+    sub = parser.add_subparsers(dest="mode", required=True)
+
+    # smiles mode
+    p_smiles = sub.add_parser("smiles", help="A single SMILES string")
+    p_smiles.add_argument("smiles", help="SMILES string")
+    p_smiles.add_argument("--models", dest="models_list", default=DEFAULT_MODELS_LIST, help="Comma-separated models list or aliases")
+    p_smiles.add_argument("--module", default=DEFAULT_MODULE, help="Module name (ProtoPHYSCHEM or ProtoADME)")
+    p_smiles.add_argument("--output-type", default="JSON", choices=["JSON", "XLSX"], help="API output type")
+    p_smiles.add_argument("--output-path", help="Path to write XLSX output")
+    p_smiles.add_argument("--base-url", default=DEFAULT_BASE_URL, help="API base URL")
+    p_smiles.add_argument("--timeout", type=int, default=60, help="Request timeout (s)")
+
+    # batch dict mode
+    p_batch = sub.add_parser("batch", help="From embedded JSON file (dict of ID -> smiles)")
+    p_batch.add_argument("json_file", help="Path to JSON file shaped as {ID: {SMILES: ...}}")
+    p_batch.add_argument("--models", dest="models_list", default=DEFAULT_MODELS_LIST)
+    p_batch.add_argument("--module", default=DEFAULT_MODULE)
+    p_batch.add_argument("--output-type", default="JSON", choices=["JSON", "XLSX"])
+    p_batch.add_argument("--output-path", help="Path to write XLSX output")
+    p_batch.add_argument("--base-url", default=DEFAULT_BASE_URL)
+    p_batch.add_argument("--timeout", type=int, default=60)
+
+    # file mode
+    p_file = sub.add_parser("file", help="Predict from .xlsx or .json upload")
+    p_file.add_argument("file_path", help="Path to .xlsx or .json file")
+    p_file.add_argument("--models", dest="models_list", default=DEFAULT_MODELS_LIST)
+    p_file.add_argument("--module", default=DEFAULT_MODULE)
+    p_file.add_argument("--output-type", default="JSON", choices=["JSON", "XLSX"])
+    p_file.add_argument("--output-path", help="Path to write XLSX output")
+    p_file.add_argument("--base-url", default=DEFAULT_BASE_URL)
+    p_file.add_argument("--timeout", type=int, default=60)
+
+    args = parser.parse_args()
+
+    if args.mode == "smiles":
+        res = predict_smiles(
+            args.smiles,
+            module=args.module,
+            models_list=args.models_list,
+            output_type=args.output_type,
+            output_path=args.output_path,
+            base_url=args.base_url,
+            timeout=args.timeout,
+        )
+    elif args.mode == "batch":
+        import json as _json
+        with open(args.json_file, "r", encoding="utf-8") as fh:
+            batch = _json.load(fh)
+        res = predict_batch_dict(
+            batch,
+            module=args.module,
+            models_list=args.models_list,
+            output_type=args.output_type,
+            output_path=args.output_path,
+            base_url=args.base_url,
+            timeout=args.timeout,
+        )
+    elif args.mode == "file":
+        res = predict_file(
+            args.file_path,
+            module=args.module,
+            models_list=args.models_list,
+            output_type=args.output_type,
+            output_path=args.output_path,
+            base_url=args.base_url,
+            timeout=args.timeout,
+        )
+    else:  # pragma: no cover
+        parser.error("Unknown mode")
+
+    if isinstance(res, dict):
+        print(json.dumps(res, indent=2, ensure_ascii=False))
+    else:
+        print(res)
+
+
+if __name__ == "__main__":  # pragma: no cover
+    _cli()
+
+
+# --------------------------------------------------------------------------- #
 # MCP-friendly wrappers
 # --------------------------------------------------------------------------- #
 def mcp_list_models(module: Optional[str] = None) -> Dict[str, Dict[str, str]]:
@@ -378,11 +466,3 @@ def mcp_predict(
         base_url=base_url,
         timeout=timeout,
     )
-
-
-# --------------------------------------------------------------------------- #
-# Quick manual test
-# --------------------------------------------------------------------------- #
-if __name__ == "__main__":
-    result = predict_smiles("CCO", models_list="model_phys:water_solubility")
-    print(json.dumps(result, indent=2, ensure_ascii=False))

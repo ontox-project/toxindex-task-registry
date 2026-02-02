@@ -77,6 +77,20 @@ All usable code is in `protopred/core.py`: the items below outline the direct AP
     3) `PROTOPRED_ACCOUNT_USER`  
     If unset, the demo credentials from the API PDF are used.
 
+- CLI usage (optional)
+  - Invoke with `python tasks/protopred/protopred/core.py <mode> ...` and `PYTHONPATH=tasks/protopred` so `protopred` imports resolve.
+  - Modes and parameters:
+    1) `smiles <SMILES> [--models ... --module ... --output-type JSON|XLSX --output-path ... --base-url ... --timeout ...]`
+    2) `batch <json_file> [--models ... --module ... --output-type JSON|XLSX --output-path ... --base-url ... --timeout ...]` (expects embedded JSON dict of ID→entry)
+    3) `file <file_path> [--models ... --module ... --output-type JSON|XLSX --output-path ... --base-url ... --timeout ...]` (`.xlsx` or `.json`; validated for SMILES)
+  - Output: prints JSON to stdout; XLSX writes to `--output-path` or returns bytes (printed) if not provided.
+  - Example:
+    ```bash
+    cd /Users/michael/Git/ONTOX/toxindex-task-registry
+    PYTHONPATH=tasks/protopred \\
+    python3 tasks/protopred/protopred/core.py smiles "CCO" --models water_solubility,melting_point
+    ```
+
 
 ### Design goals
 - Single discovery call (`mcp_list_models`) and single execution call (`mcp_predict`) for agent tool schemas.
