@@ -63,3 +63,46 @@ res = core.mcp_predict(smiles="CCO", models_list="logp")
 - The demo credentials in the PDF are baked in as fallbacks; override with env vars in production.
 - `_validate_input_file` ensures Excel has a SMILES column or JSON has SMILES fields before calling the API.
 - Model aliases include common shorthand (`logp`, `water`, `bbb`, `hia`, `half_life`, etc.); add more in `MODEL_CATALOG` / `_ALIASES` if needed.
+
+### Available models (from ProtoPRED_API_ProtoQSAR_v2.pdf)
+
+**Module ProtoPHYSCHEM** (prefix `model_phys:`)
+- `melting_point` — Melting point
+- `boiling_point` — Boiling point
+- `vapour_pressure` — Vapour pressure
+- `water_solubility` — Water solubility
+- `log_kow` — Partition coefficient (log Kow/log P)
+- `log_d` — Partition coefficient (log D)
+- `surface_tension` — Surface tension
+
+**Module ProtoADME — Absorption** (prefix `model_abs:`)
+- `bioavailability20` — Bioavailability 20%
+- `bioavailability30` — Bioavailability 30%
+- `caco-2_permeability` — Caco-2 permeability
+- `p-gp_inhibitor` — P-glycoprotein inhibitor
+- `p-gp_substrate` — P-glycoprotein substrate
+- `skin_permeability` — Skin permeability
+- `human_intestinal_absorption` — Human intestinal absorption
+
+**Module ProtoADME — Metabolism** (prefix `model_met:`)
+- `CYP450_1A2_inhibitor` — CYP450 1A2 inhibitor
+- `CYP450_1A2_substrate` — CYP450 1A2 substrate
+- `CYP450_2C19_inhibitor` — CYP450 2C19 inhibitor
+- `CYP450_2C19_substrate` — CYP450 2C19 substrate
+- `CYP450_2C9_inhibitor` — CYP450 2C9 inhibitor
+- `CYP450_2D6_inhibitor` — CYP450 2D6 inhibitor
+- `CYP450_2D6_substrate` — CYP450 2D6 substrate
+- `CYP450_3A4_inhibitor` — CYP450 3A4 inhibitor
+- `CYP450_3A4_substrate` — CYP450 3A4 substrate
+
+**Module ProtoADME — Distribution** (prefix `model_dist:`)
+- `blood-brain_barrier` — Blood-brain barrier penetration
+- `plasma-protein_binding` — Plasma protein binding
+- `volume_of_distribution` — Volume of distribution
+
+**Module ProtoADME — Excretion** (prefix `model_exc:`)
+- `half-life` — Half-life
+- `human_liver_microsomal` — Human liver microsomal stability
+- `OATP1B1` — OATP1B1 inhibitor
+- `OATP1B3` — OATP1B3 inhibitor
+- `BSEP` — BSEP inhibitor
