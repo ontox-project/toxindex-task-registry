@@ -9,7 +9,7 @@ protopred/
 └── README.md                    # This file
 ```
 
-We deliberatly leave out celery integration
+<div align="right">We intentionally leave out celery integration.</div>
 
 ## Core logic (non‑Celery)
 
