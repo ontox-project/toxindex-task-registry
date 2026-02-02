@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# progress reporting handled in celery tasks, not here
+
 """
 Standalone ProtoPRED API client.
 
