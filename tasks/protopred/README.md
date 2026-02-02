@@ -86,9 +86,7 @@ All usable code is in `protopred/core.py`: the items below outline the direct AP
   - Output: prints JSON to stdout; XLSX writes to `--output-path` or returns bytes (printed) if not provided.
   - Example:
     ```bash
-    cd /Users/michael/Git/ONTOX/toxindex-task-registry
-    PYTHONPATH=tasks/protopred \\
-    python3 tasks/protopred/protopred/core.py smiles "CCO" --models water_solubility,melting_point
+    python3 core.py smiles "CCO" --models water_solubility,melting_point
     ```
 
 
