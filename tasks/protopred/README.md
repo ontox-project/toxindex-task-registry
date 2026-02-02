@@ -9,7 +9,7 @@ protopred/
 └── README.md                    # This file
 ```
 
-<div align="right">Here we soley focus on the core logics</div>
+<div align="right">Here we solely focus on the core logics</div>
 
 ## Core logic (non‑Celery)
 
