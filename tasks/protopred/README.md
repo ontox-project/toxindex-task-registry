@@ -14,9 +14,9 @@ protopred/
 All usable code is in `protopred/core.py`:
 
 - API callers  
-  - `predict_smiles(smiles, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON"|"XLSX")`  
-  - `predict_batch_dict(molecules_dict, *, module, models_list, output_type)`  
-  - `predict_file(file_path, *, module, models_list, output_type)` (validates `.xlsx/.json` before POST)
+  - `predict_smiles(smiles, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON"|"XLSX")` — one SMILES string. Use `output_type="JSON"` for dict output; `output_type="XLSX"` returns Excel bytes (or writes to `output_path` if provided).  
+  - `predict_batch_dict(molecules_dict, *, module, models_list, output_type)` — embedded JSON batch: `{"ID": {"SMILES": "...", ...}, ...}`.  
+  - `predict_file(file_path, *, module, models_list, output_type)` — upload `.xlsx` or `.json`; enforces SMILES column/field before POST.
 - Model catalog & resolution  
   - `MODEL_CATALOG` maps every module/property/model; `list_models(module=None)` exposes it.  
   - Names are flexible (`logp`, `water`, `model_phys:water_solubility`, etc.) and normalize to canonical `model_<prop>:<name>`, deduped in order.
