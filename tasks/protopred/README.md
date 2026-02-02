@@ -23,9 +23,26 @@ All usable code is in `protopred/core.py`:
     6) `base_url` (keyword-only; default API endpoint).  
     7) `timeout` (keyword-only seconds).  
     The `*` simply enforces that params 2–7 are passed by name for clarity.
-   
-  - `predict_batch_dict(molecules_dict, *, module, models_list, output_type)` — embedded JSON batch: `{"ID": {"SMILES": "...", ...}, ...}`.  
-  - `predict_file(file_path, *, module, models_list, output_type)` — upload `.xlsx` or `.json`; enforces SMILES column/field before POST.
+
+  - `predict_batch_dict(molecules, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON"|"XLSX", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — parameters in order:
+    1) `molecules` (required dict) — shape `{"ID": {"SMILES": "...", ...}, ...}`.  
+    2) `module` (keyword-only).  
+    3) `models_list` (keyword-only; aliases allowed).  
+    4) `output_type` (keyword-only; `"JSON"` or `"XLSX"`).  
+    5) `output_path` (optional; write XLSX bytes).  
+    6) `base_url` (keyword-only).  
+    7) `timeout` (keyword-only seconds).  
+    Uses embedded JSON mode (`input_type="SMILES_FILE"` with dict payload).
+
+  - `predict_file(file_path, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON"|"XLSX", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — parameters in order:
+    1) `file_path` (required path to `.xlsx` or `.json`).  
+    2) `module` (keyword-only).  
+    3) `models_list` (keyword-only; aliases allowed).  
+    4) `output_type` (keyword-only; `"JSON"` or `"XLSX"`).  
+    5) `output_path` (optional; write XLSX bytes).  
+    6) `base_url` (keyword-only).  
+    7) `timeout` (keyword-only seconds).  
+    Validates SMILES column/field before POST; sends via multipart upload.
 - Model catalog & resolution  
   - `MODEL_CATALOG` maps every module/property/model; `list_models(module=None)` exposes it.  
   - Names are flexible (`logp`, `water`, `model_phys:water_solubility`, etc.) and normalize to canonical `model_<prop>:<name>`, deduped in order.
