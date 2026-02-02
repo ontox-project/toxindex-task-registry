@@ -155,7 +155,7 @@ res = core.mcp_predict(smiles="CCO", models_list="logp")
 
 Across both output types, when multiple models are requested via `models_list`, all requested models are present; ordering follows the API’s response, not guaranteed to match request order.
 
-### Available models (from ProtoPRED_API_ProtoQSAR_v2.pdf)
+## Available models (from ProtoPRED_API_ProtoQSAR_v2.pdf)
 
 **Module ProtoPHYSCHEM** (prefix `model_phys:`)
 - `melting_point` — Melting point
