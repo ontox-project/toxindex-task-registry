@@ -11,16 +11,20 @@ protopred/
 
 ## Core logic (non‑Celery)
 
-Everything lives in `protopred/core.py`:
+All usable code is in `protopred/core.py`:
 
-- `predict_smiles(smiles, *, module="ProtoPHYSCHEM", models_list="model_phys:water_solubility", output_type="JSON"| "XLSX")`
-- `predict_batch_dict(molecules_dict, *, module, models_list, output_type)`
-- `predict_file(file_path, *, module, models_list, output_type)` for `.xlsx` or `.json` uploads (light validation on SMILES column/field).
-- Model resolution helpers:
-  - `list_models(module=None)` returns the full catalog grouped by module/property.
-  - Models accept flexible names/aliases (`logp`, `water`, `model_phys:water_solubility`, etc.) and normalize to canonical `model_<prop>:<name>`.
-
-Defaults: `DEFAULT_MODULE="ProtoPHYSCHEM"`, `DEFAULT_MODELS_LIST="model_phys:water_solubility"`, `DEFAULT_BASE_URL="https://protopred.protoqsar.com/API/v2/"`. Credentials are read from env (`PROTOPRED_ACCOUNT_TOKEN`, `PROTOPRED_ACCOUNT_SECRET_KEY`, `PROTOPRED_ACCOUNT_USER`) with demo defaults from the API PDF.
+- API callers  
+  - `predict_smiles(smiles, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON"|"XLSX")`  
+  - `predict_batch_dict(molecules_dict, *, module, models_list, output_type)`  
+  - `predict_file(file_path, *, module, models_list, output_type)` (validates `.xlsx/.json` before POST)
+- Model catalog & resolution  
+  - `MODEL_CATALOG` maps every module/property/model; `list_models(module=None)` exposes it.  
+  - Names are flexible (`logp`, `water`, `model_phys:water_solubility`, etc.) and normalize to canonical `model_<prop>:<name>`, deduped in order.
+- MCP surface  
+  - `mcp_list_models` (discovery) and `mcp_predict` (single entrypoint for smiles/batch/file).
+- Defaults & creds  
+  - `DEFAULT_MODULE="ProtoPHYSCHEM"`, `DEFAULT_MODELS_LIST="model_phys:water_solubility"`, `DEFAULT_BASE_URL="https://protopred.protoqsar.com/API/v2/"`.  
+  - Credentials pulled from env (`PROTOPRED_ACCOUNT_TOKEN`, `PROTOPRED_ACCOUNT_SECRET_KEY`, `PROTOPRED_ACCOUNT_USER`) with API-PDF demo fallbacks.
 
 ### MCP wrapper for ToxIndex agents
 
