@@ -11,7 +11,7 @@ protopred/
 
 ## Core logic (non‑Celery)
 
-All usable code is in `protopred/core.py`:
+All usable code is in `protopred/core.py`: the items below outline the direct API callers, the model catalog/normalization helpers, the MCP-facing wrappers, and default config/credentials.
 
 - API callers - how to hit the ProtoPRED API directly
   - `predict_smiles(smiles, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON"|"XLSX", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — parameters in order:
