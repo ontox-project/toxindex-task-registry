@@ -43,13 +43,21 @@ All usable code is in `protopred/core.py`:
     6) `base_url` (keyword-only).  
     7) `timeout` (keyword-only seconds).  
     Validates SMILES column/field before POST; sends via multipart upload.
+
+<br></br>
+
 - Model catalog & parameter sync to API format  
     - Catalog: `MODEL_CATALOG` maps every module/property/model; `list_models(module=None)` exposes it.  
     - parameter sync: flexible names (`logp`, `water`, `model_phys:water_solubility`, etc.) are normalized to canonical `model_<prop>:<name>` (deduped, order-preserved).
+
 <br></br>
+
 - MCP surface - agent-facing wrappers
   - `mcp_list_models(module=None)` — discovery helper; returns `MODEL_CATALOG` (optionally filtered).  
   - `mcp_predict(smiles=None, batch=None, file_path=None, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — agent entrypoint. Provide exactly one of `smiles`, `batch` (dict), or `file_path`; dispatches to the matching predict_* helper with the same parameters as above.
+
+<br></br>
+
 - Defaults & creds  
   - `DEFAULT_MODULE="ProtoPHYSCHEM"`, `DEFAULT_MODELS_LIST="model_phys:water_solubility"`, `DEFAULT_BASE_URL="https://protopred.protoqsar.com/API/v2/"`.  
   - Credentials pulled from env (`PROTOPRED_ACCOUNT_TOKEN`, `PROTOPRED_ACCOUNT_SECRET_KEY`, `PROTOPRED_ACCOUNT_USER`) with API-PDF demo fallbacks.
