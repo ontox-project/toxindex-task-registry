@@ -51,7 +51,17 @@ All usable code is in `protopred/core.py`: the items below outline the direct AP
 
 - MCP surface - agent-facing wrappers
   - `mcp_list_models(module=None)` — discovery helper; same output as `list_models`, optional module filter.
-  - `mcp_predict(smiles=None, batch=None, file_path=None, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — agent entrypoint. Provide exactly one of `smiles`, `batch` (dict), or `file_path`; internally dispatches to the matching predict_* helper.
+  - `mcp_predict(smiles=None, batch=None, file_path=None, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — parameters in order:
+    1) `smiles` (optional str) — single SMILES; mutually exclusive with `batch`/`file_path`.  
+    2) `batch` (optional dict) — embedded JSON batch; mutually exclusive with `smiles`/`file_path`.  
+    3) `file_path` (optional path) — `.xlsx`/`.json` upload; mutually exclusive with `smiles`/`batch`.  
+    4) `module` (keyword-only; default `ProtoPHYSCHEM`).  
+    5) `models_list` (keyword-only; aliases allowed).  
+    6) `output_type` (keyword-only; `"JSON"` or `"XLSX"`).  
+    7) `output_path` (optional; write XLSX bytes).  
+    8) `base_url` (keyword-only).  
+    9) `timeout` (keyword-only seconds).  
+    Exactly one of `smiles`, `batch`, or `file_path` must be provided; dispatches to the matching predict_* helper.
 
 - Defaults & creds
   - Constants: `DEFAULT_MODULE="ProtoPHYSCHEM"`, `DEFAULT_MODELS_LIST="model_phys:water_solubility"`, `DEFAULT_BASE_URL="https://protopred.protoqsar.com/API/v2/"`.
