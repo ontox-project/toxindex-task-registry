@@ -42,13 +42,7 @@ toxindex-task-registry/
     └── protopred/                 # Example: ProtoPRED API integration
         ├── protopred/            # Python package
         │   ├── __init__.py
-        │   ├── protopred_celery.py
-        │   └── celery_worker_protopred.py
-        ├── deployment/
-        │   ├── Dockerfile.protopred
-        │   └── deployment_protopred.yaml
-        ├── original_script/      # Original standalone script (reference)
-        │   └── query_protopred_api_json.py
+        │   └── core.py
         ├── pyproject.toml
         └── README.md
 ```

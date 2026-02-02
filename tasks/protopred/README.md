@@ -1,12 +1,11 @@
-## Package Structure
+## ProtoPRED Package Structure
 
 ```
 protopred/
 ├── protopred/
-│   ├── protopred_celery.py      # Main Celery task implementation
-│   └── celery_worker_protopred.py  # Celery worker setup
+│   ├── core.py                  # Standalone ProtoPRED API client + MCP helpers
+│   └── __init__.py
 ├── pyproject.toml               # Project dependencies
-├── Dockerfile.protopred         # Docker image definition
 └── README.md                    # This file
 ```
 
