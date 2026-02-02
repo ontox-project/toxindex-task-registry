@@ -78,7 +78,7 @@ All usable code is in `protopred/core.py`: the items below outline the direct AP
     If unset, the demo credentials from the API PDF are used.
 
 
-## Design goals:
+### Design goals
 - Single discovery call (`mcp_list_models`) and single execution call (`mcp_predict`) for agent tool schemas.
 - Flexible model selection with aliases and automatic API label formating.
 - Output type switchable between JSON and XLSX (if `output_path` is set, XLSX is streamed to disk).
