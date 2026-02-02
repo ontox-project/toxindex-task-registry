@@ -51,7 +51,7 @@ All usable code is in `protopred/core.py`: the items below outline the direct AP
   - `list_models(module=None)` — returns `MODEL_CATALOG` (all modules by default, or filter by module).
   - Model normalization — flexible names (`logp`, `water`, `model_phys:water_solubility`, etc.) are resolved to canonical `model_<prop>:<name>` and deduped in order before requests.
 
-- MCP surface - agent-facing wrappers
+- MCP wrapper for ToxIndex agents
   - `mcp_list_models(module=None)` — parameters in order:
     1) `module` (optional str) — filter catalog to a single module; None returns all.
   - `mcp_predict(smiles=None, batch=None, file_path=None, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — parameters in order:
@@ -77,14 +77,8 @@ All usable code is in `protopred/core.py`: the items below outline the direct AP
     3) `PROTOPRED_ACCOUNT_USER`  
     If unset, the demo credentials from the API PDF are used.
 
-### MCP wrapper for ToxIndex agents
 
-The MCP-friendly surface is just a thin layer on top of the core functions:
-
-- `mcp_list_models(module=None)` → same as `list_models`; agents can discover available models/properties to build UI choices.
-- `mcp_predict(..., smiles=None, batch=None, file_path=None, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` → unified entrypoint. Exactly one of `smiles`, `batch` (dict), or `file_path` must be provided. Internally dispatches to `predict_smiles`, `predict_batch_dict`, or `predict_file`.
-
-Design goals:
+## Design goals:
 - Single discovery call (`mcp_list_models`) and single execution call (`mcp_predict`) for agent tool schemas.
 - Flexible model selection with aliases and automatic API label formating.
 - Output type switchable between JSON and XLSX (if `output_path` is set, XLSX is streamed to disk).
