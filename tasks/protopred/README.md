@@ -84,7 +84,7 @@ The MCP-friendly surface is just a thin layer on top of the core functions:
 
 Design goals:
 - Single discovery call (`mcp_list_models`) and single execution call (`mcp_predict`) for agent tool schemas.
-- Flexible model selection with aliases and deduplication.
+- Flexible model selection with aliases and automatic API label formating.
 - Output type switchable between JSON and XLSX (if `output_path` is set, XLSX is streamed to disk).
 
 ### Quick examples (Python)
