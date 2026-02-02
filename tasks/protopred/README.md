@@ -45,7 +45,8 @@ All usable code is in `protopred/core.py`:
     Validates SMILES column/field before POST; sends via multipart upload.
 - Model catalog & parameter sync to API format  
     - Catalog: `MODEL_CATALOG` maps every module/property/model; `list_models(module=None)` exposes it.  
-    - Resolution: flexible names (`logp`, `water`, `model_phys:water_solubility`, etc.) are normalized to canonical `model_<prop>:<name>` (deduped, order-preserved).
+    - parameter sync: flexible names (`logp`, `water`, `model_phys:water_solubility`, etc.) are normalized to canonical `model_<prop>:<name>` (deduped, order-preserved).
+
 - MCP surface - agent-facing wrappers
   - `mcp_list_models(module=None)` — discovery helper; returns `MODEL_CATALOG` (optionally filtered).  
   - `mcp_predict(smiles=None, batch=None, file_path=None, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — agent entrypoint. Provide exactly one of `smiles`, `batch` (dict), or `file_path`; dispatches to the matching predict_* helper with the same parameters as above.
