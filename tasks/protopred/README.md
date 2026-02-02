@@ -64,6 +64,63 @@ res = core.mcp_predict(smiles="CCO", models_list="logp")
 - `_validate_input_file` ensures Excel has a SMILES column or JSON has SMILES fields before calling the API.
 - Model aliases include common shorthand (`logp`, `water`, `bbb`, `hia`, `half_life`, etc.); add more in `MODEL_CATALOG` / `_ALIASES` if needed.
 
+## Input data structures
+
+- **SMILES text (`input_type="SMILES_TEXT"`)**
+  - Field: `input_data` = single SMILES string (e.g., `"CCO"`).
+  - Best for quick, single-compound predictions.
+
+- **Embedded JSON (`input_type="SMILES_FILE"` with dict)**
+  - Field: `input_data` = dict of records keyed by an ID.
+  - Shape: `{"ID_1": {"SMILES": "<string>", "CAS": "...", "Chemical name": "...", ...}, ...}`
+  - Required per entry: `SMILES` (case-insensitive); optional metadata (`CAS`, `Chemical name`, `EC number`, `Structural formula`).
+  - Used by `predict_batch_dict` and `mcp_predict(batch=...)`.
+
+- **File upload (`input_type="SMILES_FILE"` with file)**
+  - File types: `.xlsx` or `.json`.
+  - Excel: must contain a column named `SMILES` / `smi` / `smile` (case-insensitive). Other columns allowed (`CAS`, `Chemical name`, `EC number`, `Structural formula`).
+  - JSON file: same structure as embedded JSON (dict of ID → record with `SMILES`).
+  - Used by `predict_file` and `mcp_predict(file_path=...)`.
+
+- **Common required params (all modes)**
+  - `module`: `"ProtoPHYSCHEM"` or `"ProtoADME"`.
+  - `models_list`: comma-separated `model_<property>:<name>`; aliases resolved automatically.
+  - Optional: `output_type` = `"JSON"` (default) or `"XLSX"`.
+
+## Output data structures
+
+- **JSON (default)**
+  - Top-level keys: one per requested model (title-cased in responses, e.g., `"Water solubility"`, `"Melting point"`).
+  - Each model key maps to a list of result rows, each containing:
+    - `ID`: source ID (from SMILES_TEXT it's auto-assigned or echoed).
+    - Metadata echoes: `Chemical name`, `EC number`, `Structural formula`, `CAS`, `SMILES`.
+    - Prediction fields: `Experimental value*`, `Predicted value`, numeric counterparts (`Experimental numerical`, `Predicted numerical`), model-unit fields, `Probability`, and `Applicability domain**`.
+  - Shape example (abridged):
+    ```json
+    {
+      "Water solubility": [
+        {
+          "ID": "ID_1",
+          "SMILES": "C1=CC(=O)C=CC1=O",
+          "Predicted value": "18.3 g/L",
+          "Predicted numerical": 18.3,
+          "Applicability domain**": "Inside (T/L/E/R)"
+        }
+      ],
+      "Melting point": [ ... ]
+    }
+    ```
+
+- **XLSX**
+  - Returned as binary content (or written to `output_path` when provided).
+  - Sheets:
+    - `General information` — meta about models and input type.
+    - `Summary` — condensed results.
+    - One sheet per model (sentence case names) with detailed rows mirroring the JSON structure.
+  - When using `predict_*` helpers with `output_type="XLSX"` and `output_path=None`, the response dict is `{"content": <bytes>}`; with `output_path` set, `{"output_path": "<path>", "bytes_written": N}`.
+
+Across both output types, when multiple models are requested via `models_list`, all requested models are present; ordering follows the API’s response, not guaranteed to match request order.
+
 ### Available models (from ProtoPRED_API_ProtoQSAR_v2.pdf)
 
 **Module ProtoPHYSCHEM** (prefix `model_phys:`)
