@@ -1,7 +1,0 @@
-MCRA Simulation Commander
-Version:  10.2.12
-Revision: 0
-Tag:      v10.2.12
-Branch:   HEAD
-Commit:   4479a9fd
-Sha:      4479a9fdb570d71f03fd661568a9702075a904fa
