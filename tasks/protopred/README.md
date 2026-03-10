@@ -252,10 +252,14 @@ Across both output types, when multiple models are requested via `models_list`, 
 - `CYP450_3A4_inhibitor` — CYP450 3A4 inhibitor
 - `CYP450_3A4_substrate` — CYP450 3A4 substrate
 
+<br>
+
 **Distribution** (prefix `model_dist:`)
 - `blood-brain_barrier` — Blood-brain barrier penetration
 - `plasma-protein_binding` — Plasma protein binding
 - `volume_of_distribution` — Volume of distribution
+
+<br>
 
 **Excretion** (prefix `model_exc:`)
 - `half-life` — Half-life
