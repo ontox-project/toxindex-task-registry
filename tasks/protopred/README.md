@@ -213,7 +213,7 @@ Across both output types, when multiple models are requested via `models_list`, 
 
 <br>
 
-### Module ProtoPHYSCHEM
+## Module ProtoPHYSCHEM
 (prefix `model_phys:`)
 - `melting_point` — Melting point
 - `boiling_point` — Boiling point
@@ -223,7 +223,7 @@ Across both output types, when multiple models are requested via `models_list`, 
 - `log_d` — Partition coefficient (log D)
 - `surface_tension` — Surface tension
 
-#### Module ProtoADME
+## Module ProtoADME
 **Absorption** (prefix `model_abs:`)
 - `bioavailability20` — Bioavailability 20%
 - `bioavailability30` — Bioavailability 30%
