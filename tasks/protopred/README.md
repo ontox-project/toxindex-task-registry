@@ -211,8 +211,6 @@ Across both output types, when multiple models are requested via `models_list`, 
 
 ## Available models - from ProtoPRED_API_ProtoQSAR_v2.pdf
 
-<br>
-
 ### Module ProtoPHYSCHEM
 
 <br>
