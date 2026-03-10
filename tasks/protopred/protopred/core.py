@@ -299,7 +299,7 @@ def _validate_input_file(path: Path) -> None:
     - JSON: must be a dict whose values contain a SMILES key
     """
     suffix = path.suffix.lower()
-    if suffix in {".xlsx", ".xls"}:
+    if suffix == ".xlsx":
         df = pd.read_excel(path, nrows=5)
         lower_cols = [c.lower() for c in df.columns]
         if not any(c in {"smiles", "smi", "smile"} for c in lower_cols):
