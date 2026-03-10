@@ -214,7 +214,7 @@ Across both output types, when multiple models are requested via `models_list`, 
 <br>
 
 #### Module ProtoPHYSCHEM
-**Module ProtoPHYSCHEM** (prefix `model_phys:`)
+(prefix `model_phys:`)
 - `melting_point` — Melting point
 - `boiling_point` — Boiling point
 - `vapour_pressure` — Vapour pressure
@@ -224,7 +224,7 @@ Across both output types, when multiple models are requested via `models_list`, 
 - `surface_tension` — Surface tension
 
 #### Module ProtoADME
-**Module ProtoADME — Absorption** (prefix `model_abs:`)
+**Absorption** (prefix `model_abs:`)
 - `bioavailability20` — Bioavailability 20%
 - `bioavailability30` — Bioavailability 30%
 - `caco-2_permeability` — Caco-2 permeability
@@ -233,7 +233,7 @@ Across both output types, when multiple models are requested via `models_list`, 
 - `skin_permeability` — Skin permeability
 - `human_intestinal_absorption` — Human intestinal absorption
 
-**Module ProtoADME — Metabolism** (prefix `model_met:`)
+**Metabolism** (prefix `model_met:`)
 - `CYP450_1A2_inhibitor` — CYP450 1A2 inhibitor
 - `CYP450_1A2_substrate` — CYP450 1A2 substrate
 - `CYP450_2C19_inhibitor` — CYP450 2C19 inhibitor
@@ -244,12 +244,12 @@ Across both output types, when multiple models are requested via `models_list`, 
 - `CYP450_3A4_inhibitor` — CYP450 3A4 inhibitor
 - `CYP450_3A4_substrate` — CYP450 3A4 substrate
 
-**Module ProtoADME — Distribution** (prefix `model_dist:`)
+**Distribution** (prefix `model_dist:`)
 - `blood-brain_barrier` — Blood-brain barrier penetration
 - `plasma-protein_binding` — Plasma protein binding
 - `volume_of_distribution` — Volume of distribution
 
-**Module ProtoADME — Excretion** (prefix `model_exc:`)
+**Excretion** (prefix `model_exc:`)
 - `half-life` — Half-life
 - `human_liver_microsomal` — Human liver microsomal stability
 - `OATP1B1` — OATP1B1 inhibitor
