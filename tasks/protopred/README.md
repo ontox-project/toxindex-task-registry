@@ -224,6 +224,8 @@ Across both output types, when multiple models are requested via `models_list`, 
 - `log_d` — Partition coefficient (log D)
 - `surface_tension` — Surface tension
 
+<br>
+
 ### Module ProtoADME
 
 <br>
