@@ -11,6 +11,8 @@ protopred/
 
 <div align="right">Here we solely focus on the core logics</div>
 
+<br>
+
 ## ProtoPRED API Core logic (non‑Celery)
 
 All usable code is in `protopred/core.py`: the items below outline the direct API callers, the model catalog/normalization helpers, the MCP-facing wrappers, and default config/credentials.
