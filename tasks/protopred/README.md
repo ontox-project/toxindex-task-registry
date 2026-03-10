@@ -17,7 +17,10 @@ protopred/
 
 All usable code is in `protopred/core.py`: the items below outline the direct API callers, the model catalog/normalization helpers, the MCP-facing wrappers, and default config/credentials.
 
+<br>
+
 - API callers - how to hit the ProtoPRED API directly
+<br>
   - `predict_smiles(smiles, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON"|"XLSX", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — parameters in order:
     1) `smiles` (required str) — the SMILES to score.  
     2) `module` (keyword-only; default `ProtoPHYSCHEM`).  
