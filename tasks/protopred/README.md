@@ -29,7 +29,7 @@ All usable code is in `protopred/core.py`: the items below outline the direct AP
     6) `base_url` (keyword-only; default API endpoint).  
     7) `timeout` (keyword-only seconds).  
     The `*` simply enforces that params 2–7 are passed by name for clarity.
-<br>
+
   - `predict_batch_dict(molecules, *, module=DEFAULT_MODULE, models_list=DEFAULT_MODELS_LIST, output_type="JSON"|"XLSX", output_path=None, base_url=DEFAULT_BASE_URL, timeout=60)` — parameters in order:
     1) `molecules` (required dict) — shape `{"ID": {"SMILES": "...", ...}, ...}`.  
     2) `module` (keyword-only).  
