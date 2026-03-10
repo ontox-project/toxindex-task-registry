@@ -213,7 +213,10 @@ Across both output types, when multiple models are requested via `models_list`, 
 
 <br>
 
-## Module ProtoPHYSCHEM
+### Module ProtoPHYSCHEM
+
+<br>
+
 (prefix `model_phys:`)
 - `melting_point` — Melting point
 - `boiling_point` — Boiling point
@@ -223,7 +226,10 @@ Across both output types, when multiple models are requested via `models_list`, 
 - `log_d` — Partition coefficient (log D)
 - `surface_tension` — Surface tension
 
-## Module ProtoADME
+### Module ProtoADME
+
+<br>
+
 **Absorption** (prefix `model_abs:`)
 - `bioavailability20` — Bioavailability 20%
 - `bioavailability30` — Bioavailability 30%
@@ -232,6 +238,8 @@ Across both output types, when multiple models are requested via `models_list`, 
 - `p-gp_substrate` — P-glycoprotein substrate
 - `skin_permeability` — Skin permeability
 - `human_intestinal_absorption` — Human intestinal absorption
+
+<br>
 
 **Metabolism** (prefix `model_met:`)
 - `CYP450_1A2_inhibitor` — CYP450 1A2 inhibitor
