@@ -103,7 +103,12 @@ All usable code is in `protopred/core.py`: the items below outline the direct AP
 - Flexible model selection with aliases and automatic API label formating.
 - Output type switchable between JSON and XLSX (if `output_path` is set, XLSX is streamed to disk).
 
+<br>
+
 ### Quick examples (Python)
+
+<br>
+
 
 ```python
 from protopred import core
@@ -127,12 +132,21 @@ res = core.predict_file("data.xlsx", models_list=["log_kow", "melting_point"], o
 res = core.mcp_predict(smiles="CCO", models_list="logp")
 ```
 
+<br>
+
 ### Notes
+
+<br>
+
 - The demo credentials in the PDF are baked in as fallbacks; override with env vars in production.
 - `_validate_input_file` ensures Excel has a SMILES column or JSON has SMILES fields before calling the API.
 - Model aliases include common shorthand (`logp`, `water`, `bbb`, `hia`, `half_life`, etc.); add more in `MODEL_CATALOG` / `_ALIASES` if needed.
 
+<br>
+
 ## Input data structures
+
+<br>
 
 - **SMILES text (`input_type="SMILES_TEXT"`)**
   - Field: `input_data` = single SMILES string (e.g., `"CCO"`).
@@ -155,7 +169,11 @@ res = core.mcp_predict(smiles="CCO", models_list="logp")
   - `models_list`: comma-separated `model_<property>:<name>`; aliases resolved automatically.
   - Optional: `output_type` = `"JSON"` (default) or `"XLSX"`.
 
+<br>
+
 ## Output data structures
+
+<br>
 
 - **JSON (default)**
   - Top-level keys: one per requested model (title-cased in responses, e.g., `"Water solubility"`, `"Melting point"`).
@@ -189,8 +207,13 @@ res = core.mcp_predict(smiles="CCO", models_list="logp")
 
 Across both output types, when multiple models are requested via `models_list`, all requested models are present; ordering follows the API’s response, not guaranteed to match request order.
 
+<br>
+
 ## Available models - from ProtoPRED_API_ProtoQSAR_v2.pdf
 
+<br>
+
+#### Module ProtoPHYSCHEM
 **Module ProtoPHYSCHEM** (prefix `model_phys:`)
 - `melting_point` — Melting point
 - `boiling_point` — Boiling point
@@ -200,6 +223,7 @@ Across both output types, when multiple models are requested via `models_list`, 
 - `log_d` — Partition coefficient (log D)
 - `surface_tension` — Surface tension
 
+#### Module ProtoADME
 **Module ProtoADME — Absorption** (prefix `model_abs:`)
 - `bioavailability20` — Bioavailability 20%
 - `bioavailability30` — Bioavailability 30%
