@@ -93,8 +93,12 @@ All usable code is in `protopred/core.py`: the items below outline the direct AP
     python3 core.py smiles "CCO" --models water_solubility,melting_point
     ```
 
+<br>
 
 ### Design goals
+
+<br>
+
 - Single discovery call (`mcp_list_models`) and single execution call (`mcp_predict`) for agent tool schemas.
 - Flexible model selection with aliases and automatic API label formating.
 - Output type switchable between JSON and XLSX (if `output_path` is set, XLSX is streamed to disk).
