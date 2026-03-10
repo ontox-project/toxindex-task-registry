@@ -213,7 +213,7 @@ Across both output types, when multiple models are requested via `models_list`, 
 
 <br>
 
-#### Module ProtoPHYSCHEM
+### Module ProtoPHYSCHEM
 (prefix `model_phys:`)
 - `melting_point` — Melting point
 - `boiling_point` — Boiling point
